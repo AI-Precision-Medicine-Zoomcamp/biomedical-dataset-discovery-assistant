@@ -144,6 +144,8 @@ Streamlit can record a screencast directly from its upper-right app menu:
 
 ### Video Demo
 
+https://github.com/user-attachments/assets/a009d40e-b296-482c-b3d3-759129d27c13
+
 [![Click to watch the 50-second Streamlit capstone demo](docs/images/streamlit-dataset-discovery.jpg)](https://github.com/AI-Precision-Medicine-Zoomcamp/biomedical-dataset-discovery-assistant/releases/tag/capstone-demo-v1.0.0)
 
 **[Watch the demo on GitHub](https://github.com/AI-Precision-Medicine-Zoomcamp/biomedical-dataset-discovery-assistant/releases/tag/capstone-demo-v1.0.0) ·
