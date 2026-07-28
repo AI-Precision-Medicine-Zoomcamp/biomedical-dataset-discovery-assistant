@@ -161,6 +161,11 @@ produce the response.
 
 ![Streamlit dataset discovery results with grounded answer and retrieved records](docs/images/streamlit-dataset-discovery.jpg)
 
+The live OpenAI mode can also compare datasets while preserving evidence
+limitations and source-level traceability.
+
+![Live OpenAI RAG comparison of TCGA-LUAD and TCGA-LUSC](docs/images/streamlit-live-tcga-comparison.png)
+
 The monitoring page summarizes user feedback and exposes recent ratings for
 review.
 
