@@ -142,6 +142,14 @@ Streamlit can record a screencast directly from its upper-right app menu:
 
 ## Application Screenshots
 
+### Video Demo
+
+- [Watch or download the Streamlit capstone demo](https://github.com/AI-Precision-Medicine-Zoomcamp/biomedical-dataset-discovery-assistant/releases/tag/capstone-demo-v1.0.0)
+
+The 50-second recording demonstrates Live OpenAI RAG, grounded dataset
+evidence, explicit evidence limitations, the tool trace, feedback, and the
+monitoring dashboard.
+
 The browser UI shows the research question, grounded answer, retrieved source
 records, match strength, evidence limitations, and the tool trace used to
 produce the response.
