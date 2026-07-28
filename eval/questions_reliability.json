@@ -1,0 +1,220 @@
+[
+  {
+    "id": "rel_q001",
+    "question": "I need public datasets for EGFR-mutant lung adenocarcinoma with clinical metadata.",
+    "expected_dataset_ids": [
+      "gdc:TCGA-LUAD",
+      "cbioportal:luad_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["EGFR", "lung adenocarcinoma", "clinical", "LUAD"],
+    "answer_checks": [
+      "returns LUAD dataset candidates",
+      "mentions clinical metadata availability if present",
+      "labels EGFR-specific evidence as candidate or not verified unless explicit"
+    ]
+  },
+  {
+    "id": "rel_q002",
+    "question": "Are there public datasets for KRAS G12C NSCLC with RNA-seq data?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-LUAD",
+      "gdc:TCGA-LUSC",
+      "cbioportal:luad_tcga_pan_can_atlas_2018",
+      "cbioportal:lusc_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 2,
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["KRAS G12C", "NSCLC", "RNA-seq", "LUAD", "LUSC"],
+    "answer_checks": [
+      "returns lung cancer candidates",
+      "mentions RNA-seq or expression metadata",
+      "does not claim confirmed KRAS G12C-positive case counts"
+    ]
+  },
+  {
+    "id": "rel_q003",
+    "question": "Which datasets can compare LUAD and LUSC mutation profiles?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-LUAD",
+      "gdc:TCGA-LUSC",
+      "cbioportal:luad_tcga_pan_can_atlas_2018",
+      "cbioportal:lusc_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 2,
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["LUAD", "LUSC", "mutation", "compare"],
+    "answer_checks": [
+      "mentions both LUAD and LUSC",
+      "mentions mutation profile availability",
+      "does not return breast cancer as a lung comparison dataset"
+    ]
+  },
+  {
+    "id": "rel_q004",
+    "question": "Find cBioPortal studies with mutation and copy-number data for breast cancer.",
+    "expected_dataset_ids": [
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["cBioPortal"],
+    "expected_keywords": ["cBioPortal", "mutation", "copy number", "breast"],
+    "answer_checks": [
+      "returns the cBioPortal BRCA study",
+      "mentions mutation and copy-number profiles",
+      "does not substitute the GDC project view"
+    ]
+  },
+  {
+    "id": "rel_q005",
+    "question": "Which GDC projects are useful for glioma transcriptomics?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-GBM",
+      "gdc:TCGA-LGG"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": [
+      "cbioportal:gbm_tcga_pan_can_atlas_2018",
+      "cbioportal:lgg_tcga_pan_can_atlas_2018",
+      "gdc:TCGA-BRCA"
+    ],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["GDC", "glioma", "transcriptomics", "GBM", "LGG"],
+    "answer_checks": [
+      "returns GDC glioma projects",
+      "mentions transcriptome or RNA-seq evidence when available",
+      "does not substitute cBioPortal studies for a GDC-specific question"
+    ]
+  },
+  {
+    "id": "rel_q006",
+    "question": "I want melanoma datasets with mutation data but not colorectal cancer cohorts.",
+    "expected_dataset_ids": [
+      "gdc:TCGA-SKCM",
+      "cbioportal:skcm_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-COAD",
+      "gdc:TCGA-READ",
+      "cbioportal:coadread_tcga_pan_can_atlas_2018"
+    ],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["melanoma", "mutation", "SKCM"],
+    "answer_checks": [
+      "returns melanoma records",
+      "keeps colorectal cohorts out of the answer",
+      "does not claim patient-level mutation analysis was performed"
+    ]
+  },
+  {
+    "id": "rel_q007",
+    "question": "Can I use TCGA-BRCA for prostate cancer biomarker discovery?",
+    "expected_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_absent_dataset_ids": [],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["BRCA", "prostate", "out of scope"],
+    "answer_checks": [
+      "identifies TCGA-BRCA as breast cancer",
+      "states that TCGA-BRCA should not be treated as a prostate cancer dataset",
+      "redirects toward PRAD for prostate cancer"
+    ]
+  },
+  {
+    "id": "rel_q008",
+    "question": "Which datasets have both clinical metadata and copy-number profiles for head and neck cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-HNSC",
+      "cbioportal:hnsc_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": ["gdc:TCGA-PRAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["head", "neck", "clinical", "copy number", "HNSC"],
+    "answer_checks": [
+      "returns HNSC records",
+      "mentions clinical metadata and copy-number evidence if present",
+      "does not confuse head and neck cancer with prostate cancer"
+    ]
+  },
+  {
+    "id": "rel_q009",
+    "question": "Which datasets can support colorectal cancer expression analysis?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-COAD",
+      "gdc:TCGA-READ",
+      "cbioportal:coadread_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": ["gdc:TCGA-SKCM"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["colorectal", "expression", "COAD", "READ"],
+    "answer_checks": [
+      "returns colorectal records",
+      "mentions expression or RNA-seq metadata",
+      "does not confuse colorectal cancer with melanoma"
+    ]
+  },
+  {
+    "id": "rel_q010",
+    "question": "Which public resources can help inspect ovarian cancer mutation and clinical data?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-OV",
+      "cbioportal:ov_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": ["gdc:TCGA-LUAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["ovarian", "mutation", "clinical", "OV"],
+    "answer_checks": [
+      "returns ovarian cancer records",
+      "mentions mutation and clinical metadata",
+      "does not return lung cancer as an ovarian result"
+    ]
+  },
+  {
+    "id": "rel_q011",
+    "question": "Which cBioPortal studies include methylation and expression profiles for lung adenocarcinoma?",
+    "expected_dataset_ids": [
+      "cbioportal:luad_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-LUAD"],
+    "expected_sources": ["cBioPortal"],
+    "expected_keywords": ["cBioPortal", "methylation", "expression", "LUAD"],
+    "answer_checks": [
+      "returns the cBioPortal LUAD study",
+      "mentions methylation and expression profiles if present",
+      "does not substitute the GDC project view"
+    ]
+  },
+  {
+    "id": "rel_q012",
+    "question": "Do we have confirmed EGFR-positive sample counts for LUAD datasets?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-LUAD",
+      "cbioportal:luad_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["EGFR", "LUAD", "sample counts", "not verified"],
+    "answer_checks": [
+      "returns LUAD candidates",
+      "states that confirmed EGFR-positive sample counts are not verified",
+      "does not overclaim patient-level biomarker counts"
+    ]
+  }
+]

@@ -1,0 +1,832 @@
+[
+  {
+    "schema_version": 1,
+    "dataset_id": "cbioportal:brca_tcga_pan_can_atlas_2018",
+    "canonical_dataset_id": "TCGA-BRCA",
+    "source": "cBioPortal",
+    "source_record_id": "brca_tcga_pan_can_atlas_2018",
+    "source_url": "https://www.cbioportal.org/study/summary?id=brca_tcga_pan_can_atlas_2018",
+    "title": "Breast Invasive Carcinoma TCGA PanCancer Atlas",
+    "description": "cBioPortal study view for Breast Invasive Carcinoma TCGA PanCancer Atlas, included in the normalized dataset catalog.",
+    "diseases": [
+      "breast cancer"
+    ],
+    "cancer_types": [
+      "breast invasive carcinoma",
+      "BRCA"
+    ],
+    "primary_sites": [
+      "breast"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "cohort_tags": [
+      "TCGA",
+      "PanCancer Atlas",
+      "cBioPortal",
+      "non-lung comparison"
+    ],
+    "data_types": [
+      "mutation",
+      "mRNA expression",
+      "clinical",
+      "copy number"
+    ],
+    "data_categories": [
+      "Cancer Genomics Study"
+    ],
+    "assays": [],
+    "molecular_profiles": [
+      "mutations",
+      "mRNA expression",
+      "copy number alterations"
+    ],
+    "has_clinical": true,
+    "has_expression": true,
+    "has_mutation": true,
+    "has_copy_number": true,
+    "has_methylation": false,
+    "clinical_attributes": [
+      "clinical attributes",
+      "sample attributes"
+    ],
+    "explicit_genes": [],
+    "inferred_genes": [],
+    "explicit_mutations": [],
+    "inferred_mutations": [],
+    "biomarker_notes": "Included to test source-specific and out-of-scope retrieval behavior.",
+    "case_count": null,
+    "sample_count": null,
+    "access_level": "open",
+    "study_design": "cBioPortal cancer genomics study",
+    "publication_ids": [],
+    "external_ids": [
+      "brca_tcga_pan_can_atlas_2018",
+      "TCGA-BRCA"
+    ],
+    "evidence_level": "pipeline_seed",
+    "evidence_items": [
+      {
+        "field": "molecular_profiles",
+        "value": "mutations; mRNA expression; copy number alterations",
+        "source": "cBioPortal raw study extract",
+        "supports": "Study is suitable for follow-up molecular profile and gene-oriented inspection.",
+        "confidence": "medium"
+      },
+      {
+        "field": "canonical_dataset_id",
+        "value": "TCGA-BRCA",
+        "source": "cBioPortal raw study extract",
+        "supports": "Connects this cBioPortal source view to the canonical TCGA dataset.",
+        "confidence": "medium"
+      }
+    ],
+    "limitations": [
+      "This is not a lung cancer or NSCLC dataset and should not be treated as relevant to NSCLC questions."
+    ],
+    "curation_status": "pipeline_seed",
+    "last_verified": "2026-07-16",
+    "source_metadata": {
+      "cbioportal": {
+        "study_id": "brca_tcga_pan_can_atlas_2018",
+        "canonical_dataset_id": "TCGA-BRCA",
+        "name": "Breast Invasive Carcinoma TCGA PanCancer Atlas",
+        "primary_site": "breast",
+        "disease_terms": [
+          "breast cancer"
+        ],
+        "cancer_types": [
+          "breast invasive carcinoma",
+          "BRCA"
+        ],
+        "cohort_tags": [
+          "TCGA",
+          "PanCancer Atlas",
+          "cBioPortal",
+          "non-lung comparison"
+        ],
+        "molecular_profiles": [
+          "mutations",
+          "mRNA expression",
+          "copy number alterations"
+        ],
+        "clinical_attributes": [
+          "clinical attributes",
+          "sample attributes"
+        ],
+        "inferred_genes": [],
+        "inferred_mutations": [],
+        "biomarker_notes": "Included to test source-specific and out-of-scope retrieval behavior.",
+        "limitations": [
+          "This is not a lung cancer or NSCLC dataset and should not be treated as relevant to NSCLC questions."
+        ]
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "dataset_id": "cbioportal:luad_tcga_pan_can_atlas_2018",
+    "canonical_dataset_id": "TCGA-LUAD",
+    "source": "cBioPortal",
+    "source_record_id": "luad_tcga_pan_can_atlas_2018",
+    "source_url": "https://www.cbioportal.org/study/summary?id=luad_tcga_pan_can_atlas_2018",
+    "title": "Lung Adenocarcinoma TCGA PanCancer Atlas",
+    "description": "cBioPortal study view for Lung Adenocarcinoma TCGA PanCancer Atlas, included in the normalized dataset catalog.",
+    "diseases": [
+      "non-small cell lung cancer",
+      "lung cancer"
+    ],
+    "cancer_types": [
+      "lung adenocarcinoma",
+      "LUAD"
+    ],
+    "primary_sites": [
+      "lung"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "cohort_tags": [
+      "NSCLC",
+      "TCGA",
+      "PanCancer Atlas",
+      "cBioPortal"
+    ],
+    "data_types": [
+      "mutation",
+      "mRNA expression",
+      "clinical",
+      "copy number"
+    ],
+    "data_categories": [
+      "Cancer Genomics Study"
+    ],
+    "assays": [],
+    "molecular_profiles": [
+      "mutations",
+      "mRNA expression",
+      "copy number alterations"
+    ],
+    "has_clinical": true,
+    "has_expression": true,
+    "has_mutation": true,
+    "has_copy_number": true,
+    "has_methylation": false,
+    "clinical_attributes": [
+      "clinical attributes",
+      "sample attributes"
+    ],
+    "explicit_genes": [],
+    "inferred_genes": [
+      "EGFR",
+      "KRAS"
+    ],
+    "explicit_mutations": [],
+    "inferred_mutations": [
+      "KRAS G12C"
+    ],
+    "biomarker_notes": "cBioPortal is the better source view for follow-up EGFR or KRAS alteration inspection, but this seed extract does not claim explicit KRAS G12C-positive sample counts.",
+    "case_count": null,
+    "sample_count": null,
+    "access_level": "open",
+    "study_design": "cBioPortal cancer genomics study",
+    "publication_ids": [],
+    "external_ids": [
+      "luad_tcga_pan_can_atlas_2018",
+      "TCGA-LUAD"
+    ],
+    "evidence_level": "pipeline_seed",
+    "evidence_items": [
+      {
+        "field": "molecular_profiles",
+        "value": "mutations; mRNA expression; copy number alterations",
+        "source": "cBioPortal raw study extract",
+        "supports": "Study is suitable for follow-up molecular profile and gene-oriented inspection.",
+        "confidence": "medium"
+      },
+      {
+        "field": "canonical_dataset_id",
+        "value": "TCGA-LUAD",
+        "source": "cBioPortal raw study extract",
+        "supports": "Connects this cBioPortal source view to the canonical TCGA dataset.",
+        "confidence": "medium"
+      }
+    ],
+    "limitations": [
+      "Specific EGFR, KRAS, or KRAS G12C-positive sample counts are not verified in this raw extract.",
+      "This record represents a cBioPortal study view, not the official GDC project file catalog."
+    ],
+    "curation_status": "pipeline_seed",
+    "last_verified": "2026-07-16",
+    "source_metadata": {
+      "cbioportal": {
+        "study_id": "luad_tcga_pan_can_atlas_2018",
+        "canonical_dataset_id": "TCGA-LUAD",
+        "name": "Lung Adenocarcinoma TCGA PanCancer Atlas",
+        "primary_site": "lung",
+        "disease_terms": [
+          "non-small cell lung cancer",
+          "lung cancer"
+        ],
+        "cancer_types": [
+          "lung adenocarcinoma",
+          "LUAD"
+        ],
+        "cohort_tags": [
+          "NSCLC",
+          "TCGA",
+          "PanCancer Atlas",
+          "cBioPortal"
+        ],
+        "molecular_profiles": [
+          "mutations",
+          "mRNA expression",
+          "copy number alterations"
+        ],
+        "clinical_attributes": [
+          "clinical attributes",
+          "sample attributes"
+        ],
+        "inferred_genes": [
+          "EGFR",
+          "KRAS"
+        ],
+        "inferred_mutations": [
+          "KRAS G12C"
+        ],
+        "biomarker_notes": "cBioPortal is the better source view for follow-up EGFR or KRAS alteration inspection, but this seed extract does not claim explicit KRAS G12C-positive sample counts.",
+        "limitations": [
+          "Specific EGFR, KRAS, or KRAS G12C-positive sample counts are not verified in this raw extract.",
+          "This record represents a cBioPortal study view, not the official GDC project file catalog."
+        ]
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "dataset_id": "cbioportal:lusc_tcga_pan_can_atlas_2018",
+    "canonical_dataset_id": "TCGA-LUSC",
+    "source": "cBioPortal",
+    "source_record_id": "lusc_tcga_pan_can_atlas_2018",
+    "source_url": "https://www.cbioportal.org/study/summary?id=lusc_tcga_pan_can_atlas_2018",
+    "title": "Lung Squamous Cell Carcinoma TCGA PanCancer Atlas",
+    "description": "cBioPortal study view for Lung Squamous Cell Carcinoma TCGA PanCancer Atlas, included in the normalized dataset catalog.",
+    "diseases": [
+      "non-small cell lung cancer",
+      "lung cancer"
+    ],
+    "cancer_types": [
+      "lung squamous cell carcinoma",
+      "LUSC"
+    ],
+    "primary_sites": [
+      "lung"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "cohort_tags": [
+      "NSCLC",
+      "TCGA",
+      "PanCancer Atlas",
+      "cBioPortal"
+    ],
+    "data_types": [
+      "mutation",
+      "mRNA expression",
+      "clinical",
+      "copy number"
+    ],
+    "data_categories": [
+      "Cancer Genomics Study"
+    ],
+    "assays": [],
+    "molecular_profiles": [
+      "mutations",
+      "mRNA expression",
+      "copy number alterations"
+    ],
+    "has_clinical": true,
+    "has_expression": true,
+    "has_mutation": true,
+    "has_copy_number": true,
+    "has_methylation": false,
+    "clinical_attributes": [
+      "clinical attributes",
+      "sample attributes"
+    ],
+    "explicit_genes": [],
+    "inferred_genes": [
+      "EGFR",
+      "KRAS"
+    ],
+    "explicit_mutations": [],
+    "inferred_mutations": [
+      "KRAS G12C"
+    ],
+    "biomarker_notes": "cBioPortal is useful for follow-up molecular profile inspection, but KRAS G12C relevance should remain candidate-level until variant-positive samples are verified.",
+    "case_count": null,
+    "sample_count": null,
+    "access_level": "open",
+    "study_design": "cBioPortal cancer genomics study",
+    "publication_ids": [],
+    "external_ids": [
+      "lusc_tcga_pan_can_atlas_2018",
+      "TCGA-LUSC"
+    ],
+    "evidence_level": "pipeline_seed",
+    "evidence_items": [
+      {
+        "field": "molecular_profiles",
+        "value": "mutations; mRNA expression; copy number alterations",
+        "source": "cBioPortal raw study extract",
+        "supports": "Study is suitable for follow-up molecular profile and gene-oriented inspection.",
+        "confidence": "medium"
+      },
+      {
+        "field": "canonical_dataset_id",
+        "value": "TCGA-LUSC",
+        "source": "cBioPortal raw study extract",
+        "supports": "Connects this cBioPortal source view to the canonical TCGA dataset.",
+        "confidence": "medium"
+      }
+    ],
+    "limitations": [
+      "Specific EGFR, KRAS, or KRAS G12C-positive sample counts are not verified in this raw extract.",
+      "This record represents a cBioPortal study view, not the official GDC project file catalog."
+    ],
+    "curation_status": "pipeline_seed",
+    "last_verified": "2026-07-16",
+    "source_metadata": {
+      "cbioportal": {
+        "study_id": "lusc_tcga_pan_can_atlas_2018",
+        "canonical_dataset_id": "TCGA-LUSC",
+        "name": "Lung Squamous Cell Carcinoma TCGA PanCancer Atlas",
+        "primary_site": "lung",
+        "disease_terms": [
+          "non-small cell lung cancer",
+          "lung cancer"
+        ],
+        "cancer_types": [
+          "lung squamous cell carcinoma",
+          "LUSC"
+        ],
+        "cohort_tags": [
+          "NSCLC",
+          "TCGA",
+          "PanCancer Atlas",
+          "cBioPortal"
+        ],
+        "molecular_profiles": [
+          "mutations",
+          "mRNA expression",
+          "copy number alterations"
+        ],
+        "clinical_attributes": [
+          "clinical attributes",
+          "sample attributes"
+        ],
+        "inferred_genes": [
+          "EGFR",
+          "KRAS"
+        ],
+        "inferred_mutations": [
+          "KRAS G12C"
+        ],
+        "biomarker_notes": "cBioPortal is useful for follow-up molecular profile inspection, but KRAS G12C relevance should remain candidate-level until variant-positive samples are verified.",
+        "limitations": [
+          "Specific EGFR, KRAS, or KRAS G12C-positive sample counts are not verified in this raw extract.",
+          "This record represents a cBioPortal study view, not the official GDC project file catalog."
+        ]
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "dataset_id": "gdc:TCGA-BRCA",
+    "canonical_dataset_id": "TCGA-BRCA",
+    "source": "GDC",
+    "source_record_id": "TCGA-BRCA",
+    "source_url": "https://portal.gdc.cancer.gov/projects/TCGA-BRCA",
+    "title": "TCGA Breast Invasive Carcinoma",
+    "description": "GDC project record for TCGA Breast Invasive Carcinoma, included in the normalized dataset catalog.",
+    "diseases": [
+      "breast cancer"
+    ],
+    "cancer_types": [
+      "breast invasive carcinoma",
+      "BRCA"
+    ],
+    "primary_sites": [
+      "breast"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "cohort_tags": [
+      "TCGA",
+      "tumor",
+      "adult",
+      "non-lung comparison"
+    ],
+    "data_types": [
+      "RNA-seq",
+      "clinical",
+      "mutation",
+      "copy number"
+    ],
+    "data_categories": [
+      "Transcriptome Profiling",
+      "Simple Nucleotide Variation",
+      "Clinical",
+      "Copy Number Variation"
+    ],
+    "assays": [
+      "RNA-Seq",
+      "WXS"
+    ],
+    "molecular_profiles": [],
+    "has_clinical": true,
+    "has_expression": true,
+    "has_mutation": true,
+    "has_copy_number": true,
+    "has_methylation": false,
+    "clinical_attributes": [
+      "diagnosis",
+      "tumor stage",
+      "survival"
+    ],
+    "explicit_genes": [],
+    "inferred_genes": [],
+    "explicit_mutations": [],
+    "inferred_mutations": [],
+    "biomarker_notes": "Included to test that lung cancer queries do not always return every TCGA cancer project.",
+    "case_count": null,
+    "sample_count": null,
+    "access_level": "mixed",
+    "study_design": "TCGA cancer genomics project",
+    "publication_ids": [],
+    "external_ids": [
+      "TCGA-BRCA"
+    ],
+    "evidence_level": "pipeline_seed",
+    "evidence_items": [
+      {
+        "field": "dataset_id",
+        "value": "TCGA-BRCA",
+        "source": "GDC raw project extract",
+        "supports": "Official project identity for dataset discovery.",
+        "confidence": "high"
+      },
+      {
+        "field": "data_categories",
+        "value": "Transcriptome Profiling; Simple Nucleotide Variation; Clinical; Copy Number Variation",
+        "source": "GDC raw project extract",
+        "supports": "Dataset may support expression, mutation, clinical, and copy-number oriented discovery.",
+        "confidence": "medium"
+      }
+    ],
+    "limitations": [
+      "This is not a lung cancer or NSCLC dataset and should not be treated as relevant to NSCLC questions."
+    ],
+    "curation_status": "pipeline_seed",
+    "last_verified": "2026-07-08",
+    "source_metadata": {
+      "gdc": {
+        "project_id": "TCGA-BRCA",
+        "program": "TCGA",
+        "name": "TCGA Breast Invasive Carcinoma",
+        "primary_site": "breast",
+        "disease_terms": [
+          "breast cancer"
+        ],
+        "cancer_types": [
+          "breast invasive carcinoma",
+          "BRCA"
+        ],
+        "cohort_tags": [
+          "TCGA",
+          "tumor",
+          "adult",
+          "non-lung comparison"
+        ],
+        "data_categories": [
+          "Transcriptome Profiling",
+          "Simple Nucleotide Variation",
+          "Clinical",
+          "Copy Number Variation"
+        ],
+        "experimental_strategies": [
+          "RNA-Seq",
+          "WXS"
+        ],
+        "clinical_attributes": [
+          "diagnosis",
+          "tumor stage",
+          "survival"
+        ],
+        "inferred_genes": [],
+        "inferred_mutations": [],
+        "biomarker_notes": "Included to test that lung cancer queries do not always return every TCGA cancer project.",
+        "limitations": [
+          "This is not a lung cancer or NSCLC dataset and should not be treated as relevant to NSCLC questions."
+        ]
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "dataset_id": "gdc:TCGA-LUAD",
+    "canonical_dataset_id": "TCGA-LUAD",
+    "source": "GDC",
+    "source_record_id": "TCGA-LUAD",
+    "source_url": "https://portal.gdc.cancer.gov/projects/TCGA-LUAD",
+    "title": "TCGA Lung Adenocarcinoma",
+    "description": "GDC project record for TCGA Lung Adenocarcinoma, included in the normalized dataset catalog.",
+    "diseases": [
+      "non-small cell lung cancer",
+      "lung cancer"
+    ],
+    "cancer_types": [
+      "lung adenocarcinoma",
+      "LUAD"
+    ],
+    "primary_sites": [
+      "lung"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "cohort_tags": [
+      "NSCLC",
+      "TCGA",
+      "tumor",
+      "adult"
+    ],
+    "data_types": [
+      "RNA-seq",
+      "clinical",
+      "mutation",
+      "copy number"
+    ],
+    "data_categories": [
+      "Transcriptome Profiling",
+      "Simple Nucleotide Variation",
+      "Clinical",
+      "Copy Number Variation"
+    ],
+    "assays": [
+      "RNA-Seq",
+      "WXS"
+    ],
+    "molecular_profiles": [],
+    "has_clinical": true,
+    "has_expression": true,
+    "has_mutation": true,
+    "has_copy_number": true,
+    "has_methylation": false,
+    "clinical_attributes": [
+      "diagnosis",
+      "tumor stage",
+      "survival"
+    ],
+    "explicit_genes": [],
+    "inferred_genes": [
+      "EGFR",
+      "KRAS"
+    ],
+    "explicit_mutations": [],
+    "inferred_mutations": [
+      "KRAS G12C"
+    ],
+    "biomarker_notes": "LUAD is a strong candidate disease context for EGFR and KRAS mutation-oriented discovery, but this seed extract does not verify specific variant-positive cases.",
+    "case_count": null,
+    "sample_count": null,
+    "access_level": "mixed",
+    "study_design": "TCGA cancer genomics project",
+    "publication_ids": [],
+    "external_ids": [
+      "TCGA-LUAD"
+    ],
+    "evidence_level": "pipeline_seed",
+    "evidence_items": [
+      {
+        "field": "dataset_id",
+        "value": "TCGA-LUAD",
+        "source": "GDC raw project extract",
+        "supports": "Official project identity for dataset discovery.",
+        "confidence": "high"
+      },
+      {
+        "field": "data_categories",
+        "value": "Transcriptome Profiling; Simple Nucleotide Variation; Clinical; Copy Number Variation",
+        "source": "GDC raw project extract",
+        "supports": "Dataset may support expression, mutation, clinical, and copy-number oriented discovery.",
+        "confidence": "medium"
+      }
+    ],
+    "limitations": [
+      "Specific EGFR, KRAS, or KRAS G12C-positive case counts are not verified in this raw extract.",
+      "The local pipeline stores metadata only and does not download or analyze raw genomic files."
+    ],
+    "curation_status": "pipeline_seed",
+    "last_verified": "2026-07-08",
+    "source_metadata": {
+      "gdc": {
+        "project_id": "TCGA-LUAD",
+        "program": "TCGA",
+        "name": "TCGA Lung Adenocarcinoma",
+        "primary_site": "lung",
+        "disease_terms": [
+          "non-small cell lung cancer",
+          "lung cancer"
+        ],
+        "cancer_types": [
+          "lung adenocarcinoma",
+          "LUAD"
+        ],
+        "cohort_tags": [
+          "NSCLC",
+          "TCGA",
+          "tumor",
+          "adult"
+        ],
+        "data_categories": [
+          "Transcriptome Profiling",
+          "Simple Nucleotide Variation",
+          "Clinical",
+          "Copy Number Variation"
+        ],
+        "experimental_strategies": [
+          "RNA-Seq",
+          "WXS"
+        ],
+        "clinical_attributes": [
+          "diagnosis",
+          "tumor stage",
+          "survival"
+        ],
+        "inferred_genes": [
+          "EGFR",
+          "KRAS"
+        ],
+        "inferred_mutations": [
+          "KRAS G12C"
+        ],
+        "biomarker_notes": "LUAD is a strong candidate disease context for EGFR and KRAS mutation-oriented discovery, but this seed extract does not verify specific variant-positive cases.",
+        "limitations": [
+          "Specific EGFR, KRAS, or KRAS G12C-positive case counts are not verified in this raw extract.",
+          "The local pipeline stores metadata only and does not download or analyze raw genomic files."
+        ]
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "dataset_id": "gdc:TCGA-LUSC",
+    "canonical_dataset_id": "TCGA-LUSC",
+    "source": "GDC",
+    "source_record_id": "TCGA-LUSC",
+    "source_url": "https://portal.gdc.cancer.gov/projects/TCGA-LUSC",
+    "title": "TCGA Lung Squamous Cell Carcinoma",
+    "description": "GDC project record for TCGA Lung Squamous Cell Carcinoma, included in the normalized dataset catalog.",
+    "diseases": [
+      "non-small cell lung cancer",
+      "lung cancer"
+    ],
+    "cancer_types": [
+      "lung squamous cell carcinoma",
+      "LUSC"
+    ],
+    "primary_sites": [
+      "lung"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "cohort_tags": [
+      "NSCLC",
+      "TCGA",
+      "tumor",
+      "adult"
+    ],
+    "data_types": [
+      "RNA-seq",
+      "clinical",
+      "mutation",
+      "copy number"
+    ],
+    "data_categories": [
+      "Transcriptome Profiling",
+      "Simple Nucleotide Variation",
+      "Clinical",
+      "Copy Number Variation"
+    ],
+    "assays": [
+      "RNA-Seq",
+      "WXS"
+    ],
+    "molecular_profiles": [],
+    "has_clinical": true,
+    "has_expression": true,
+    "has_mutation": true,
+    "has_copy_number": true,
+    "has_methylation": false,
+    "clinical_attributes": [
+      "diagnosis",
+      "tumor stage",
+      "survival"
+    ],
+    "explicit_genes": [],
+    "inferred_genes": [
+      "EGFR",
+      "KRAS"
+    ],
+    "explicit_mutations": [],
+    "inferred_mutations": [
+      "KRAS G12C"
+    ],
+    "biomarker_notes": "LUSC is relevant to NSCLC discovery and may support mutation-oriented search, but KRAS G12C relevance is weaker unless specific cases are verified.",
+    "case_count": null,
+    "sample_count": null,
+    "access_level": "mixed",
+    "study_design": "TCGA cancer genomics project",
+    "publication_ids": [],
+    "external_ids": [
+      "TCGA-LUSC"
+    ],
+    "evidence_level": "pipeline_seed",
+    "evidence_items": [
+      {
+        "field": "dataset_id",
+        "value": "TCGA-LUSC",
+        "source": "GDC raw project extract",
+        "supports": "Official project identity for dataset discovery.",
+        "confidence": "high"
+      },
+      {
+        "field": "data_categories",
+        "value": "Transcriptome Profiling; Simple Nucleotide Variation; Clinical; Copy Number Variation",
+        "source": "GDC raw project extract",
+        "supports": "Dataset may support expression, mutation, clinical, and copy-number oriented discovery.",
+        "confidence": "medium"
+      }
+    ],
+    "limitations": [
+      "Specific EGFR, KRAS, or KRAS G12C-positive case counts are not verified in this raw extract.",
+      "KRAS G12C-oriented relevance should be treated as candidate-level unless variant-positive cases are confirmed."
+    ],
+    "curation_status": "pipeline_seed",
+    "last_verified": "2026-07-08",
+    "source_metadata": {
+      "gdc": {
+        "project_id": "TCGA-LUSC",
+        "program": "TCGA",
+        "name": "TCGA Lung Squamous Cell Carcinoma",
+        "primary_site": "lung",
+        "disease_terms": [
+          "non-small cell lung cancer",
+          "lung cancer"
+        ],
+        "cancer_types": [
+          "lung squamous cell carcinoma",
+          "LUSC"
+        ],
+        "cohort_tags": [
+          "NSCLC",
+          "TCGA",
+          "tumor",
+          "adult"
+        ],
+        "data_categories": [
+          "Transcriptome Profiling",
+          "Simple Nucleotide Variation",
+          "Clinical",
+          "Copy Number Variation"
+        ],
+        "experimental_strategies": [
+          "RNA-Seq",
+          "WXS"
+        ],
+        "clinical_attributes": [
+          "diagnosis",
+          "tumor stage",
+          "survival"
+        ],
+        "inferred_genes": [
+          "EGFR",
+          "KRAS"
+        ],
+        "inferred_mutations": [
+          "KRAS G12C"
+        ],
+        "biomarker_notes": "LUSC is relevant to NSCLC discovery and may support mutation-oriented search, but KRAS G12C relevance is weaker unless specific cases are verified.",
+        "limitations": [
+          "Specific EGFR, KRAS, or KRAS G12C-positive case counts are not verified in this raw extract.",
+          "KRAS G12C-oriented relevance should be treated as candidate-level unless variant-positive cases are confirmed."
+        ]
+      }
+    }
+  }
+]

@@ -63,6 +63,11 @@
     "id": "q006",
     "question": "Which datasets can support EGFR mutation research?",
     "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "min_expected_dataset_hits": 2,
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
     "expected_sources": ["GDC"],
     "expected_keywords": ["EGFR", "mutation", "lung"],
     "answer_checks": [
@@ -75,6 +80,11 @@
     "id": "q007",
     "question": "Which datasets can support KRAS mutation research?",
     "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "min_expected_dataset_hits": 2,
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
     "expected_sources": ["GDC"],
     "expected_keywords": ["KRAS", "mutation", "lung"],
     "answer_checks": [
@@ -114,6 +124,7 @@
       "cbioportal:luad_tcga_pan_can_atlas_2018",
       "cbioportal:lusc_tcga_pan_can_atlas_2018"
     ],
+    "expected_absent_dataset_ids": ["cbioportal:brca_tcga_pan_can_atlas_2018"],
     "expected_sources": ["cBioPortal"],
     "expected_keywords": ["cBioPortal", "NSCLC", "lung"],
     "answer_checks": [
@@ -126,6 +137,7 @@
     "id": "q011",
     "question": "Which cBioPortal studies provide mutation profiles for LUAD?",
     "expected_dataset_ids": ["cbioportal:luad_tcga_pan_can_atlas_2018"],
+    "expected_absent_dataset_ids": ["cbioportal:brca_tcga_pan_can_atlas_2018"],
     "expected_sources": ["cBioPortal"],
     "expected_keywords": ["cBioPortal", "LUAD", "mutation"],
     "answer_checks": [
@@ -147,6 +159,34 @@
       "returns BRCA records",
       "does not confuse breast cancer with NSCLC",
       "states that BRCA is a comparison dataset for the MVP"
+    ]
+  },
+  {
+    "id": "q013",
+    "question": "Which NSCLC datasets have confirmed KRAS G12C-positive case counts?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_absent_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["NSCLC", "KRAS G12C", "case counts", "limitations"],
+    "answer_checks": [
+      "returns lung cancer candidates only",
+      "states that confirmed KRAS G12C-positive case counts are not verified",
+      "does not treat BRCA as relevant to NSCLC"
+    ]
+  },
+  {
+    "id": "q014",
+    "question": "Can TCGA-BRCA answer an NSCLC mutation research question?",
+    "expected_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["BRCA", "NSCLC", "out of scope"],
+    "answer_checks": [
+      "identifies TCGA-BRCA as a breast cancer comparison dataset",
+      "states that it should not be treated as relevant to NSCLC",
+      "redirects the user toward LUAD or LUSC for NSCLC"
     ]
   }
 ]

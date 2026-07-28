@@ -20,9 +20,9 @@ Public biomedical datasets are distributed across multiple platforms. Each platf
 
 ## Repository Setup
 
-Status: started.
+Status: first runnable prototype.
 
-Current repository contains planning and design documentation:
+Current repository contains planning documents plus the first seed-catalog retrieval implementation:
 
 - `README.md`
 - `docs/project_investigation.md`
@@ -33,8 +33,20 @@ Current repository contains planning and design documentation:
 - `docs/week3_meeting_prep.md`
 - `docs/evaluation_plan.md`
 - `eval/questions_seed.json`
+- `data/processed/seed_catalog.json`
+- `src/models.py`
+- `src/catalog.py`
+- `src/retriever.py`
+- `src/answer.py`
+- `scripts/ingest_gdc.py`
+- `scripts/ingest_cbioportal.py`
+- `scripts/build_catalog.py`
+- `scripts/validate_catalog.py`
+- `evaluation/retrieval_eval.py`
+- `tests/test_retriever.py`
+- `tests/test_answer.py`
 
-Implementation files have not started yet, but the initial evaluation question seed file has been created.
+Implementation has started, but it is still an MVP. The current answer layer is deterministic and grounded in retrieved records; it is not yet a full LLM-backed RAG flow.
 
 ## Primary RAG Document Sources
 
@@ -123,6 +135,21 @@ Purpose:
 - create evaluation examples
 - avoid getting blocked by API complexity too early
 
+Current implementation:
+
+```text
+scripts/ingest_gdc.py
+scripts/ingest_cbioportal.py
+-> data/raw/
+-> scripts/build_catalog.py
+-> data/processed/catalog.json
+-> scripts/validate_catalog.py
+```
+
+This is a local data-engineering pipeline over curated seed metadata. It is not
+yet live API ingestion, but it establishes the extract/raw/transform/processed
+shape needed for later GDC and cBioPortal API loaders.
+
 ### Step 2: Source-Specific Loaders
 
 Implement separate loaders for each source:
@@ -166,6 +193,13 @@ Searchable fields:
 - explicit and inferred mutations
 - limitations
 
+Current implementation details:
+
+- synonym expansion maps `NSCLC` to LUAD/LUSC and lung cancer terms
+- exact dataset IDs such as `TCGA-BRCA` receive a ranking boost
+- non-lung comparison records are penalized for explicit NSCLC/lung queries
+- retrieved records retain matched terms, scores, source, and canonical dataset IDs for evaluation
+
 ### Later Versions
 
 Add:
@@ -190,6 +224,7 @@ Possible metrics:
 - recall@k
 - precision@k for curated questions
 - whether expected source appears in retrieved results
+- whether explicitly out-of-scope records are absent from the result set
 
 ### Answer Evaluation
 
@@ -203,6 +238,12 @@ Checks:
 - distinguishes explicit evidence from inferred relevance
 - includes limitations when evidence is weak
 - avoids unsupported medical or treatment claims
+
+Current deterministic answer checks:
+
+- KRAS G12C answers must label match level as candidate or medium unless explicit mutation evidence exists
+- answers must include limitations when variant-positive case counts are not verified
+- no-match answers must say that the current seed catalog lacks a record rather than claiming no public data exists
 
 ## Example User Questions
 
@@ -246,9 +287,19 @@ source APIs / seed metadata
 -> normalized DatasetRecord catalog
 -> retrieval index
 -> retrieved dataset context
--> RAG answer with evidence and limitations
+-> evidence-aware answer with evidence and limitations
 -> evaluation
 -> UI
+```
+
+Near-term production flow:
+
+```text
+retrieved DatasetRecord context
+-> grounded prompt
+-> LLM answer
+-> answer checks / LLM-as-judge
+-> logged query and feedback
 ```
 
 Key architecture principle:

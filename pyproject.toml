@@ -1,0 +1,13 @@
+[project]
+name = "biomedical-dataset-discovery-assistant"
+version = "0.1.0"
+description = "Evidence-aware biomedical dataset discovery assistant for LLM Zoomcamp."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0,<2",
+    "streamlit>=1.46,<2",
+]
+
+[tool.uv]
+package = false

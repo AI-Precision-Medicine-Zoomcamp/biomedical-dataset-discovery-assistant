@@ -1,0 +1,295 @@
+[
+  {
+    "id": "live_q001",
+    "question": "What public datasets exist for colorectal cancer?",
+    "expected_dataset_ids": [
+      "cbioportal:coadread_tcga_pan_can_atlas_2018",
+      "gdc:TCGA-COAD",
+      "gdc:TCGA-READ"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-SKCM"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["colorectal", "COAD", "READ"],
+    "answer_checks": [
+      "mentions cBioPortal COADREAD or GDC COAD/READ",
+      "does not return melanoma as a colorectal result",
+      "states limitations"
+    ]
+  },
+  {
+    "id": "live_q002",
+    "question": "Which datasets are available for melanoma?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-SKCM",
+      "cbioportal:skcm_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-COAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["melanoma", "SKCM"],
+    "answer_checks": [
+      "returns SKCM records",
+      "does not confuse melanoma with colorectal cancer",
+      "mentions available molecular data"
+    ]
+  },
+  {
+    "id": "live_q003",
+    "question": "Which public datasets exist for prostate cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-PRAD",
+      "cbioportal:prad_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["prostate", "PRAD"],
+    "answer_checks": [
+      "returns PRAD records",
+      "mentions source systems",
+      "does not return BRCA as a prostate dataset"
+    ]
+  },
+  {
+    "id": "live_q004",
+    "question": "Which public datasets exist for kidney cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-KIRC",
+      "cbioportal:kirc_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-LUAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["kidney", "KIRC"],
+    "answer_checks": [
+      "returns kidney cancer records",
+      "mentions KIRC or related kidney TCGA projects",
+      "states limitations"
+    ]
+  },
+  {
+    "id": "live_q005",
+    "question": "Which datasets are available for brain cancer or glioma?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-GBM",
+      "gdc:TCGA-LGG",
+      "cbioportal:gbm_tcga_pan_can_atlas_2018",
+      "cbioportal:lgg_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["brain", "GBM", "LGG", "glioma"],
+    "answer_checks": [
+      "returns GBM or LGG records",
+      "does not return breast cancer as a brain cancer dataset",
+      "mentions available molecular data"
+    ]
+  },
+  {
+    "id": "live_q006",
+    "question": "Which datasets include methylation profiles in cBioPortal?",
+    "expected_dataset_ids": [
+      "cbioportal:uvm_tcga_pan_can_atlas_2018",
+      "cbioportal:ucs_tcga_pan_can_atlas_2018",
+      "cbioportal:thym_tcga_pan_can_atlas_2018",
+      "cbioportal:luad_tcga_pan_can_atlas_2018",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "min_expected_dataset_hits": 1,
+    "expected_absent_dataset_ids": ["gdc:TCGA-LUAD"],
+    "expected_sources": ["cBioPortal"],
+    "expected_keywords": ["methylation", "cBioPortal"],
+    "answer_checks": [
+      "returns cBioPortal records",
+      "mentions methylation profile availability",
+      "does not claim patient-level analysis was performed"
+    ]
+  },
+  {
+    "id": "live_q007",
+    "question": "Which public datasets exist for ovarian cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-OV",
+      "cbioportal:ov_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-LUAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["ovarian", "OV"],
+    "answer_checks": [
+      "returns OV records",
+      "does not confuse ovarian cancer with lung cancer",
+      "states limitations"
+    ]
+  },
+  {
+    "id": "live_q008",
+    "question": "Which datasets are available for bladder cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-BLCA",
+      "cbioportal:blca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["bladder", "BLCA"],
+    "answer_checks": [
+      "returns BLCA records",
+      "does not return BRCA as bladder cancer",
+      "mentions source systems"
+    ]
+  },
+  {
+    "id": "live_q009",
+    "question": "Which public datasets exist for stomach or gastric cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-STAD",
+      "cbioportal:stad_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-SKCM"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["stomach", "gastric", "STAD"],
+    "answer_checks": [
+      "returns STAD records",
+      "does not return melanoma as gastric cancer",
+      "states limitations"
+    ]
+  },
+  {
+    "id": "live_q010",
+    "question": "Which datasets are available for liver hepatocellular carcinoma?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-LIHC",
+      "cbioportal:lihc_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-THCA"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["liver", "LIHC"],
+    "answer_checks": [
+      "returns LIHC records",
+      "does not confuse liver with thyroid cancer",
+      "mentions available metadata"
+    ]
+  },
+  {
+    "id": "live_q011",
+    "question": "Which datasets are available for thyroid cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-THCA",
+      "cbioportal:thca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-LIHC"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["thyroid", "THCA"],
+    "answer_checks": [
+      "returns THCA records",
+      "does not confuse thyroid with liver cancer",
+      "states limitations"
+    ]
+  },
+  {
+    "id": "live_q012",
+    "question": "Which public datasets exist for cervical cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-CESC",
+      "cbioportal:cesc_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-UCEC"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["cervical", "CESC"],
+    "answer_checks": [
+      "returns CESC records",
+      "does not confuse cervical cancer with uterine cancer",
+      "mentions source systems"
+    ]
+  },
+  {
+    "id": "live_q013",
+    "question": "Which public datasets exist for uterine or endometrial cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-UCEC",
+      "cbioportal:ucec_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-CESC"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["uterine", "endometrial", "UCEC"],
+    "answer_checks": [
+      "returns UCEC records",
+      "does not confuse uterine with cervical cancer",
+      "states limitations"
+    ]
+  },
+  {
+    "id": "live_q014",
+    "question": "Which datasets are available for head and neck squamous cell carcinoma?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-HNSC",
+      "cbioportal:hnsc_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-PRAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["head", "neck", "HNSC"],
+    "answer_checks": [
+      "returns HNSC records",
+      "does not return prostate cancer",
+      "mentions available molecular data if known"
+    ]
+  },
+  {
+    "id": "live_q015",
+    "question": "Which cBioPortal studies provide copy number profiles for breast cancer?",
+    "expected_dataset_ids": [
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["cBioPortal"],
+    "expected_keywords": ["copy number", "BRCA", "cBioPortal"],
+    "answer_checks": [
+      "returns the cBioPortal BRCA study",
+      "mentions copy number profile availability",
+      "does not substitute the GDC project view"
+    ]
+  },
+  {
+    "id": "live_q016",
+    "question": "Which GDC projects are available for breast cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-BRCA"
+    ],
+    "expected_absent_dataset_ids": ["cbioportal:brca_tcga_pan_can_atlas_2018"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["GDC", "breast", "BRCA"],
+    "answer_checks": [
+      "returns the GDC BRCA project",
+      "does not substitute the cBioPortal study as the primary source",
+      "mentions source limitations"
+    ]
+  },
+  {
+    "id": "live_q017",
+    "question": "Which datasets support mutation data for melanoma?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-SKCM",
+      "cbioportal:skcm_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-COAD"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["melanoma", "mutation", "SKCM"],
+    "answer_checks": [
+      "returns SKCM mutation-capable records",
+      "does not return colorectal cancer",
+      "does not claim patient-level mutation analysis was performed"
+    ]
+  },
+  {
+    "id": "live_q018",
+    "question": "Which datasets include clinical metadata for prostate cancer?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-PRAD",
+      "cbioportal:prad_tcga_pan_can_atlas_2018"
+    ],
+    "expected_absent_dataset_ids": ["gdc:TCGA-BRCA"],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["clinical", "prostate", "PRAD"],
+    "answer_checks": [
+      "returns PRAD records",
+      "mentions clinical metadata",
+      "does not return BRCA as prostate cancer"
+    ]
+  }
+]

@@ -1,0 +1,123 @@
+{
+  "source": "cBioPortal",
+  "extract_type": "curated_seed_studies",
+  "extracted_at": "2026-07-16",
+  "records": [
+    {
+      "study_id": "luad_tcga_pan_can_atlas_2018",
+      "canonical_dataset_id": "TCGA-LUAD",
+      "name": "Lung Adenocarcinoma TCGA PanCancer Atlas",
+      "primary_site": "lung",
+      "disease_terms": [
+        "non-small cell lung cancer",
+        "lung cancer"
+      ],
+      "cancer_types": [
+        "lung adenocarcinoma",
+        "LUAD"
+      ],
+      "cohort_tags": [
+        "NSCLC",
+        "TCGA",
+        "PanCancer Atlas",
+        "cBioPortal"
+      ],
+      "molecular_profiles": [
+        "mutations",
+        "mRNA expression",
+        "copy number alterations"
+      ],
+      "clinical_attributes": [
+        "clinical attributes",
+        "sample attributes"
+      ],
+      "inferred_genes": [
+        "EGFR",
+        "KRAS"
+      ],
+      "inferred_mutations": [
+        "KRAS G12C"
+      ],
+      "biomarker_notes": "cBioPortal is the better source view for follow-up EGFR or KRAS alteration inspection, but this seed extract does not claim explicit KRAS G12C-positive sample counts.",
+      "limitations": [
+        "Specific EGFR, KRAS, or KRAS G12C-positive sample counts are not verified in this raw extract.",
+        "This record represents a cBioPortal study view, not the official GDC project file catalog."
+      ]
+    },
+    {
+      "study_id": "lusc_tcga_pan_can_atlas_2018",
+      "canonical_dataset_id": "TCGA-LUSC",
+      "name": "Lung Squamous Cell Carcinoma TCGA PanCancer Atlas",
+      "primary_site": "lung",
+      "disease_terms": [
+        "non-small cell lung cancer",
+        "lung cancer"
+      ],
+      "cancer_types": [
+        "lung squamous cell carcinoma",
+        "LUSC"
+      ],
+      "cohort_tags": [
+        "NSCLC",
+        "TCGA",
+        "PanCancer Atlas",
+        "cBioPortal"
+      ],
+      "molecular_profiles": [
+        "mutations",
+        "mRNA expression",
+        "copy number alterations"
+      ],
+      "clinical_attributes": [
+        "clinical attributes",
+        "sample attributes"
+      ],
+      "inferred_genes": [
+        "EGFR",
+        "KRAS"
+      ],
+      "inferred_mutations": [
+        "KRAS G12C"
+      ],
+      "biomarker_notes": "cBioPortal is useful for follow-up molecular profile inspection, but KRAS G12C relevance should remain candidate-level until variant-positive samples are verified.",
+      "limitations": [
+        "Specific EGFR, KRAS, or KRAS G12C-positive sample counts are not verified in this raw extract.",
+        "This record represents a cBioPortal study view, not the official GDC project file catalog."
+      ]
+    },
+    {
+      "study_id": "brca_tcga_pan_can_atlas_2018",
+      "canonical_dataset_id": "TCGA-BRCA",
+      "name": "Breast Invasive Carcinoma TCGA PanCancer Atlas",
+      "primary_site": "breast",
+      "disease_terms": [
+        "breast cancer"
+      ],
+      "cancer_types": [
+        "breast invasive carcinoma",
+        "BRCA"
+      ],
+      "cohort_tags": [
+        "TCGA",
+        "PanCancer Atlas",
+        "cBioPortal",
+        "non-lung comparison"
+      ],
+      "molecular_profiles": [
+        "mutations",
+        "mRNA expression",
+        "copy number alterations"
+      ],
+      "clinical_attributes": [
+        "clinical attributes",
+        "sample attributes"
+      ],
+      "inferred_genes": [],
+      "inferred_mutations": [],
+      "biomarker_notes": "Included to test source-specific and out-of-scope retrieval behavior.",
+      "limitations": [
+        "This is not a lung cancer or NSCLC dataset and should not be treated as relevant to NSCLC questions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+id: biomedical_catalog_pipeline
+namespace: llm_zoomcamp.biomedical
+
+description: |
+  Build, validate, and evaluate the biomedical DatasetRecord catalog.
+  This flow mirrors the local `make pipeline` command and aligns the project
+  with the LLM Zoomcamp orchestration module.
+
+tasks:
+  - id: ingest_gdc
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - uv run python -m scripts.ingest_gdc
+
+  - id: ingest_cbioportal
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - uv run python -m scripts.ingest_cbioportal
+
+  - id: build_catalog
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - uv run python -m scripts.build_catalog
+
+  - id: validate_catalog
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - uv run python -m scripts.validate_catalog
+
+  - id: retrieval_eval
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - uv run python -m evaluation.retrieval_eval --catalog data/processed/catalog.json
+
+  - id: answer_eval
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - uv run python -m evaluation.answer_eval --catalog data/processed/catalog.json

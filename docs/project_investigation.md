@@ -138,7 +138,8 @@ Suggested first scope:
 - Search type: metadata keyword search first
 - RAG type: answer from retrieved dataset records plus short source documentation snippets
 
-This keeps the first version realistic while leaving room to add GEO, SRA, embeddings, hybrid search, and richer UI later.
+This keeps the first version realistic while leaving room to add GEO, SRA,
+deeper metadata, and UI polish later.
 
 ## Non-Hardcoded Architecture
 
